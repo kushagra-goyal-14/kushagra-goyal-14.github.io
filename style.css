@@ -130,6 +130,9 @@ p {
 #header .nav-list ul.active {
 	left: 0%;
 }
+#header .nav-list ul li {
+	counter-increment: item;
+}
 #header .nav-list ul a {
 	font-size: 1.4rem;
 	font-weight: 500;
@@ -138,6 +141,12 @@ p {
 	color: #ccd6f6;
 	padding: 20px;
 	display: block;
+}
+#header .nav-list ul a::before {
+	content: "0" counter(item) ".";
+        margin-right: 5px;
+	color:#64ffda;
+        text-align: right;
 }
 #header .nav-list ul a::after {
 	content: attr(data-after);
