@@ -424,13 +424,13 @@ p {
     background: #64ffda;
 }
 .skills-content .right .html::before{
-    width: 90%;
+    width: 60%;
 }
 .skills-content .right .css::before{
-    width: 70%;
+    width: 50%;
 }
 .skills-content .right .js::before{
-    width: 50%;
+    width: 20%;
 }
 .skills-content .right .php::before{
     width: 90%;
