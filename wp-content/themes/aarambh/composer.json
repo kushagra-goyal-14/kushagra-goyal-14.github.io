@@ -1,0 +1,41 @@
+{
+	"name": "dryrunner/aarambh",
+	"description": "",
+	"type": "wordpress-theme",
+	"homepage": "https://dryrunner.in/",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=8.2"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^2.3",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"automattic/vipwpcs": "^2.3",
+		"dealerdirect/phpcodesniffer-composer-installer": "1.2.0",
+		"sirbrillig/phpcs-variable-analysis": "^2.11.3",
+		"wp-cli/i18n-command": "^2.4"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"autoload": {
+		"classmap": [
+			"include/"
+		],
+		"files": [
+			"include/helpers/custom-functions.php"
+		]
+	},
+	"scripts": {
+		"phpcs": "@php ./vendor/bin/phpcs",
+		"phpcs:fix": "@php ./vendor/bin/phpcbf",
+		"post-install-cmd": [
+			"pnpm i"
+		],
+		"pot": "wp i18n make-pot . ./languages/aarambh-theme.pot --domain=aarambh-theme --include=\"inc,patterns,assets/build/js\""
+	}
+}
